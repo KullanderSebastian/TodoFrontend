@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+	text-align: center;
+	padding: 15px;
+	color: white;
+	font-size: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header p {
+	font-size: 24px;
+	font-family: 'Kalam', cursive;
+	transform: rotate(-2deg);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header h5 {
+	color: red;
+	position: fixed;
+	font-size: 20px;
+	top: 35px;
+	right: 35px;
+	color: 	#904E4E;
+	cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+header h5:hover {
+	text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.displayNone {
+	display: none;
+}
+
+.fullPageWrapper {
+	background: rgb(171,214,153);
+	background: linear-gradient(137deg, rgba(171,214,153,1) 0%, rgba(117,201,183,1) 100%);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+}
+
+.todoList {
+	width: 40%;
+	margin: 0 auto;
+}
+
+.todoItem {
+	background-color: #ECD06F;
+	padding: 7.5px;
+	margin: 15px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.completed {
+	text-decoration: line-through;
+}
+
+.addTodo {
+	width: 100%;
+	text-align: center;
+}
+
+.addTodo input {
+	width: calc(35% - 15px);
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+}
+
+.addTodo button {
+	width: calc(5% - 19px);
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+	min-width: 50px;
+	cursor: pointer;
+}
+
+.login, .register {
+	background-color: white;
+	max-width: 200px;
+	margin: 0 auto;
+	margin-top: 100px;
+	padding: 30px;
+	text-align: center;
+	z-index: -2;
+}
+
+.login input {
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 0;
+	border-bottom: 2px solid black;
+}
+
+.register input {
+	display: block;
+	margin: 0 auto;
+	padding: 10px;
+	margin-bottom: 20px;
+	border: 0;
+	border-bottom: 2px solid black;
+}
+
+.login input:focus {
+	border: 0;
+	outline: 0;
+	border-bottom: 2px solid #ECD06F;
+	transition: 0.3s;
+}
+
+.register input:focus {
+	border: 0;
+	outline: 0;
+	border-bottom: 2px solid #ECD06F;
+	transition: 0.3s;
+}
+
+.login h2 {
+	padding-bottom: 30px;
+}
+
+.register h2 {
+	padding-bottom: 30px;
+}
+
+.login button {
+	width: 176px;
+	margin: 15px 0;
+	margin-bottom: 60px;
+	z-index: 1;
+}
+
+.register button {
+	width: 176px;
+	margin: 15px 0;
+	margin-bottom: 60px;
+	z-index: 1;
+}
+
+.loginButton, .registerButton {
+	font-size: 24px;
+	font-weight: 300;
+	letter-spacing: 1px;
+	padding: 13px 20px 13px;
+	outline: 0;
+	border: 1px solid black;
+	cursor: pointer;
+	position: relative;
+	background-color: rgba(0, 0, 0, 0);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+.loginButton:after, .registerButton:after {
+	content: "";
+	background-color: #ECD06F;
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	top: 7px;
+	left: 7px;
+	transition: 0.2s;
+	z-index: -1;
+}
+
+.loginButton:hover:after, .registerButton:hover:after {
+	top: 0px;
+	left: 0px;
+}
+
+@media (min-width: 768px) {
+	.loginButton, .registerButton {
+		padding: 13px 50px 13px;
+	}
 }
